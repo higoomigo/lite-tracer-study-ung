@@ -1,11 +1,12 @@
 
 @extends('layouts.landing.main_app')
-@section('title', 'Tracer Study - Teknik Informatika UNG')
+@section('title-dash', 'Tracer Study - Teknik Informatika UNG')
+@extends('partials.navbar')
 @section('content')    
     <!-- Hero Section -->
     <section id="home" class="hero min-h-screen flex items-center pt-16">
         <div class="container mx-auto px-6 py-24 text-center text-white">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Jelajahi Keberhasilan Lulusan UNG</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Jelajahi Keberhasilan Lulusan TI - UNG</h1>
             <p class="text-xl md:text-2xl mb-8 animate__animated animate__fadeInUp">Lulusan kami telah tersebar di dunia kerja dan pendidikan di dalam negeri dan luar negeri.</p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
                 <a href="#statistics" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg">Lihat Statistik Lulusan Kami</a>
@@ -17,13 +18,13 @@
     <!-- Statistics Section -->
     <section id="statistics" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-navy mb-16 scroll-reveal active">Statistik Lulusan UNG</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-navy mb-16 scroll-reveal active">Statistik Lulusan</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
                     <h3 class="text-xl font-semibold text-navy mb-4">Persebaran Lulusan</h3>
                     <div class="aspect-w-16 aspect-h-9">
-                        <canvas id="locationChart" class="w-full" style="display: block; box-sizing: border-box; height: 680px; width: 680px;" width="850" height="850"></canvas>
+                        <canvas id="locationChart" class="w-full" style="display: block; box-sizing: border-box; height: 400px; width: 400px;" width="850" height="850"></canvas>
                     </div>
                     <div class="mt-4 text-sm text-gray-600">
                         <p>* Data berdasarkan tracer study tahun 2023</p>
@@ -61,7 +62,7 @@
             </div>
             
             <div class="text-center">
-                <a href="#programs" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg inline-block">Pelajari Program Studi Kami</a>
+                <a href="{{ route('statistik-detail') }}" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg inline-block">Lihat Detail Statistik</a>
             </div>
         </div>
     </section>
@@ -81,103 +82,104 @@
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-navy mb-3">Sistem Informasi</h3>
                         <p class="text-gray-600 mb-4">Program studi yang
- memfokuskan pada pengembangan sistem informasi untuk mendukung proses 
-bisnis dan pengambilan keputusan dalam organisasi.</p>
-                        <h4 class="font-semibold text-navy mb-2">Manfaat:</h4>
-                        <ul class="list-disc list-inside text-gray-600 mb-6">
-                            <li>Peluang karir yang luas di berbagai industri</li>
-                            <li>Kemampuan menganalisis dan merancang sistem informasi</li>
-                            <li>Keterampilan dalam manajemen data dan basis data</li>
-                            <li>Pemahaman tentang proses bisnis dan teknologi informasi</li>
-                        </ul>
-                        <a href="#" class="text-navy font-semibold hover:underline">Pelajari lebih lanjut →</a>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden program-card scroll-reveal active">
-                    <div class="h-48 bg-blue-100 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-navy" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-navy mb-3">Pendidikan Teknologi Informasi</h3>
-                        <p class="text-gray-600 mb-4">Program studi yang mempersiapkan mahasiswa untuk menjadi pendidik profesional dalam bidang teknologi informasi dan komputer.</p>
-                        <h4 class="font-semibold text-navy mb-2">Manfaat:</h4>
-                        <ul class="list-disc list-inside text-gray-600 mb-6">
-                            <li>Kemampuan mengajar dan merancang pembelajaran teknologi</li>
-                            <li>Penguasaan teknologi informasi dan pemrograman</li>
-                            <li>Peluang karir sebagai pendidik atau profesional IT</li>
-                            <li>Kontribusi dalam pengembangan pendidikan berbasis teknologi</li>
-                        </ul>
-                        <a href="#" class="text-navy font-semibold hover:underline">Pelajari lebih lanjut →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="#" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg inline-block">Daftar Sekarang</a>
-            </div>
-        </div>
-    </section>
+                            memfokuskan pada pengembangan sistem informasi untuk mendukung proses 
+                            bisnis dan pengambilan keputusan dalam organisasi.</p>
+                                                    <h4 class="font-semibold text-navy mb-2">Manfaat:</h4>
+                                                    <ul class="list-disc list-inside text-gray-600 mb-6">
+                                                        <li>Peluang karir yang luas di berbagai industri</li>
+                                                        <li>Kemampuan menganalisis dan merancang sistem informasi</li>
+                                                        <li>Keterampilan dalam manajemen data dan basis data</li>
+                                                        <li>Pemahaman tentang proses bisnis dan teknologi informasi</li>
+                                                    </ul>
+                                                    <a href="#" class="text-navy font-semibold hover:underline">Pelajari lebih lanjut →</a>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="bg-white rounded-lg shadow-lg overflow-hidden program-card scroll-reveal active">
+                                                <div class="h-48 bg-blue-100 flex items-center justify-center">
+                                                    <svg class="w-24 h-24 text-navy" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="p-6">
+                                                    <h3 class="text-2xl font-bold text-navy mb-3">Pendidikan Teknologi Informasi</h3>
+                                                    <p class="text-gray-600 mb-4">Program studi yang mempersiapkan mahasiswa untuk menjadi pendidik profesional dalam bidang teknologi informasi dan komputer.</p>
+                                                    <h4 class="font-semibold text-navy mb-2">Manfaat:</h4>
+                                                    <ul class="list-disc list-inside text-gray-600 mb-6">
+                                                        <li>Kemampuan mengajar dan merancang pembelajaran teknologi</li>
+                                                        <li>Penguasaan teknologi informasi dan pemrograman</li>
+                                                        <li>Peluang karir sebagai pendidik atau profesional IT</li>
+                                                        <li>Kontribusi dalam pengembangan pendidikan berbasis teknologi</li>
+                                                    </ul>
+                                                    <a href="#" class="text-navy font-semibold hover:underline">Pelajari lebih lanjut →</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-12 text-center">
+                                            <a href="#" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg inline-block">Daftar Sekarang</a>
+                                        </div>
+                                    </div>
+                                </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-navy mb-16 scroll-reveal active">Testimonial Lulusan</h2>
-            
-            <div class="carousel">
-                <div class="carousel-inner" style="transform: translateX(-100%);">
-                    <!-- Testimonial 1 -->
-                    <div class="carousel-item">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div class="bg-white rounded-lg shadow-lg p-6 testimonial-card">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                                        <svg class="w-10 h-10 text-navy" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-navy">Ahmad Rizki</h4>
-                                        <p class="text-gray-600">Sistem Informasi 2018</p>
-                                        <p class="text-sm text-blue-600">Software Engineer di Tokopedia</p>
-                                    </div>
-                                </div>
-                                <div class="relative">
-                                    <svg class="w-8 h-8 text-gray-300 absolute -top-4 -left-2" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
-                                    </svg>
-                                    <p class="text-gray-600 italic">UNG 
-memberikan saya fondasi yang kuat dalam pengembangan perangkat lunak. 
-Dosen-dosen yang kompeten dan kurikulum yang relevan dengan industri 
-membuat saya siap menghadapi dunia kerja.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-white rounded-lg shadow-lg p-6 testimonial-card">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                                        <svg class="w-10 h-10 text-navy" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-navy">Siti Nurhaliza</h4>
-                                        <p class="text-gray-600">Pendidikan TI 2017</p>
-                                        <p class="text-sm text-blue-600">Guru TIK di SMAN 1 Gorontalo</p>
-                                    </div>
-                                </div>
-                                <div class="relative">
-                                    <svg class="w-8 h-8 text-gray-300 absolute -top-4 -left-2" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
-                                    </svg>
-                                    <p class="text-gray-600 italic">Program
- Pendidikan TI di UNG membekali saya dengan keterampilan mengajar dan 
-pengetahuan teknologi yang sangat bermanfaat. Saya bisa langsung 
-menerapkan ilmu yang didapat untuk mengembangkan metode pembelajaran 
-berbasis teknologi.</p>
-                                </div>
+                                <!-- Testimonials Section -->
+                                <section id="testimonials" class="py-20 bg-gray-50">
+                                    <div class="container mx-auto px-6">
+                                        <h2 class="text-3xl md:text-4xl font-bold text-center text-navy mb-16 scroll-reveal active">Testimonial Lulusan</h2>
+                                        
+                                        <div class="carousel">
+                                            <div class="carousel-inner" style="transform: translateX(-100%);">
+                                                <!-- Testimonial 1 -->
+                                                <div class="carousel-item">
+                                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                                        <div class="bg-white rounded-lg shadow-lg p-6 testimonial-card">
+                                                            <div class="flex items-center mb-4">
+                                                                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                                                    <svg class="w-10 h-10 text-navy" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                                                    </svg>
+                                                                </div>
+                                                                <div>
+                                                                    <h4 class="font-bold text-navy">Ahmad Rizki</h4>
+                                                                    <p class="text-gray-600">Sistem Informasi 2018</p>
+                                                                    <p class="text-sm text-blue-600">Software Engineer di Tokopedia</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="relative">
+                                                                <svg class="w-8 h-8 text-gray-300 absolute -top-4 -left-2" fill="currentColor" viewBox="0 0 24 24">
+                                                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+                                                                </svg>
+                                                                <p class="text-gray-600 italic">UNG 
+                            memberikan saya fondasi yang kuat dalam pengembangan perangkat lunak. 
+                            Dosen-dosen yang kompeten dan kurikulum yang relevan dengan industri 
+                            membuat saya siap menghadapi dunia kerja.</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="bg-white rounded-lg shadow-lg p-6 testimonial-card">
+                                                            <div class="flex items-center mb-4">
+                                                                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                                                    <svg class="w-10 h-10 text-navy" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                                                    </svg>
+                                                                </div>
+                                                                <div>
+                                                                    <h4 class="font-bold text-navy">Siti Nurhaliza</h4>
+                                                                    <p class="text-gray-600">Pendidikan TI 2017</p>
+                                                                    <p class="text-sm text-blue-600">Guru TIK di SMAN 1 Gorontalo</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="relative">
+                                                                <svg class="w-8 h-8 text-gray-300 absolute -top-4 -left-2" fill="currentColor" viewBox="0 0 24 24">
+                                                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+                                                                </svg>
+                                                                <p class="text-gray-600 italic">Program
+                            Pendidikan TI di UNG membekali saya dengan keterampilan mengajar dan 
+                            pengetahuan teknologi yang sangat bermanfaat. Saya bisa langsung 
+                            menerapkan ilmu yang didapat untuk mengembangkan metode pembelajaran 
+                            berbasis teknologi.
+                        </p>
+                        </div>
                             </div>
                             
                             <div class="bg-white rounded-lg shadow-lg p-6 testimonial-card">
