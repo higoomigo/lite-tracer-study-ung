@@ -2,7 +2,6 @@
 @section('title-dash', 'Dashboard User')
 @section('content')
 <!-- Main Content -->
-<div class="flex-1 ml-0 md:ml-64 transition-all duration-300 ease-in-out">
     <!-- Mobile Header -->
     <header class="bg-white shadow-sm py-4 px-6 md:hidden">
         <div class="flex items-center justify-between">
@@ -25,7 +24,7 @@
         <div class="flex items-center p-6 bg-white rounded-lg shadow-lg space-x-6">
             <!-- Profile Picture Section -->
             <div class="w-1/4">
-                <img src="{{ asset('images/profile.jpg') }}" class="rounded-lg w-64 h-80 object-cover shadow-md border-4 border-gray-200">
+                <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&background=0D8ABC&color=fff&size=256" alt="Profile picture of {{ Auth::user()->name }}. User is facing forward and smiling. The background is a solid blue color." class="rounded-lg w-64 h-80 object-cover shadow-md border-4 border-gray-200">
             </div>
             
             <!-- Profile Details Section -->
@@ -93,6 +92,5 @@
               
         
     </main>
-</div>
 
 @endsection

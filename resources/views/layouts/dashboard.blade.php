@@ -71,9 +71,9 @@
     <div class="flex min-h-screen">
         <!-- Sidebar -->
         @include('partials.sidebar')
-
-        @yield('content')
-            
+            <div class="flex-1 ml-0 md:ml-64 transition-all duration-300 ease-in-out">
+                @yield('content')
+            </div>
         </div>
     
 
