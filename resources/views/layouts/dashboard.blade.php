@@ -76,6 +76,18 @@
             </div>
         </div>
     
+        <!-- Mobile Header -->
+    <header class="bg-white shadow-sm py-4 px-6 md:hidden">
+        <div class="flex items-center justify-between">
+            <button id="menuToggle" class="text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <h1 class="text-lg font-semibold text-navy">Admin Dashboard</h1>
+            <div class="w-6"></div> <!-- Spacer for alignment -->
+        </div>
+    </header>
 
     <script>
         // Mobile menu toggle

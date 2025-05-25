@@ -34,4 +34,9 @@ class Pekerjaan extends Model
         'interest_return_school',
         'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class); // Assuming there's a User model
+    }
 }

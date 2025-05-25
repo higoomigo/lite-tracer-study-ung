@@ -185,8 +185,9 @@
                         <span class="font-bold text-xl">UNG Tracer Study</span>
                     </div>
                     <p class="text-sm text-gray-300 mb-4">Universitas 
-Negeri Gorontalo adalah perguruan tinggi negeri yang berkomitmen untuk 
-menghasilkan lulusan berkualitas dan berdaya saing global.</p>
+                        Negeri Gorontalo adalah perguruan tinggi negeri yang berkomitmen untuk 
+                        menghasilkan lulusan berkualitas dan berdaya saing global.
+                    </p>
                 </div>
                 
                 <div>
@@ -290,100 +291,150 @@ menghasilkan lulusan berkualitas dan berdaya saing global.</p>
         window.addEventListener('scroll', checkReveal);
         window.addEventListener('load', checkReveal);
         
+// Sebaran lokasi kerja semua lulusan
+        // $sebaranLokasiKerja = Pekerjaan::whereHas('user')
+        //     ->selectRaw('job_location, COUNT(*) as total')
+        //     ->groupBy('job_location')
+        //     ->pluck('total', 'job_location');
+
+        // // Jalur karir semua lulusan (pekerjaan, lanjut studi, wirausaha)
+        // $totalLulusan = User::count();
+        // $totalPekerjaan = Pekerjaan::distinct('user_id')->count('user_id');
+        // $totalLanjutStudi = LanjutStudi::distinct('user_id')->count('user_id');
+        // $totalWirausaha = Wirausaha::distinct('user_id')->count('user_id');
+
+        // $jalurKarir = [
+        //     'pekerjaan' => $totalPekerjaan,
+        //     'lanjut_studi' => $totalLanjutStudi,
+        //     'wirausaha' => $totalWirausaha,
+        // ];
+
+        // // Persentase terserap pekerjaan, lanjut studi, dan wirausaha dari total lulusan
+        // $persentaseKarir = [
+        //     'pekerjaan' => $totalLulusan ? round(($totalPekerjaan / $totalLulusan) * 100, 2) : 0,
+        //     'lanjut_studi' => $totalLulusan ? round(($totalLanjutStudi / $totalLulusan) * 100, 2) : 0,
+        //     'wirausaha' => $totalLulusan ? round(($totalWirausaha / $totalLulusan) * 100, 2) : 0,
+        // ];
+
         // Charts
         document.addEventListener('DOMContentLoaded', function() {
+            // Data dari backend (Blade ke JS)
+            const persentaseKarir = @json($persentaseKarir ?? [
+                'pekerjaan' => 0,
+            ]);
+            const sebaranLokasiKerja = @json($sebaranLokasiKerja ?? []);
+
             // Location Chart
+            const locationLabels = Object.keys(sebaranLokasiKerja).length > 0
+            ? Object.keys(sebaranLokasiKerja)
+            : ['Dalam Negeri', 'Luar Negeri'];
+            const locationData = Object.values(sebaranLokasiKerja).length > 0
+            ? Object.values(sebaranLokasiKerja)
+            : [85, 15];
+
             const locationCtx = document.getElementById('locationChart').getContext('2d');
             const locationChart = new Chart(locationCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Dalam Negeri', 'Luar Negeri'],
-                    datasets: [{
-                        data: [85, 15],
-                        backgroundColor: [
-                            '#001F3F',
-                            '#4299E1'
-                        ],
-                        borderColor: [
-                            '#FFFFFF',
-                            '#FFFFFF'
-                        ],
-                        borderWidth: 2
-                    }]
+            type: 'pie',
+            data: {
+                labels: locationLabels,
+                datasets: [{
+                data: locationData,
+                backgroundColor: [
+                    '#001F3F',
+                    '#4299E1',
+                    '#003366',
+                    '#004080',
+                    '#0066CC'
+                ],
+                borderColor: [
+                    '#FFFFFF',
+                    '#FFFFFF',
+                    '#FFFFFF',
+                    '#FFFFFF',
+                    '#FFFFFF'
+                ],
+                borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                    padding: 20,
+                    font: {
+                        size: 12
+                    }
+                    }
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                padding: 20,
-                                font: {
-                                    size: 12
-                                }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.label || '';
-                                    const value = context.raw || 0;
-                                    return `${label}: ${value}%`;
-                                }
-                            }
-                        }
+                tooltip: {
+                    callbacks: {
+                    label: function(context) {
+                        const label = context.label || '';
+                        const value = context.raw || 0;
+                        return `${label}: ${value}%`;
+                    }
                     }
                 }
+                }
+            }
             });
-            
+
             // Career Chart
+            const careerLabels = ['Bekerja', 'Studi Lanjut', 'Wirausaha'];
+            const careerData = [
+            persentaseKarir.pekerjaan ?? 0,
+            persentaseKarir.lanjut_studi ?? 0,
+            persentaseKarir.wirausaha ?? 0
+            ];
+
             const careerCtx = document.getElementById('careerChart').getContext('2d');
             const careerChart = new Chart(careerCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Bekerja', 'Studi Lanjut', 'Wirausaha', 'Lainnya'],
-                    datasets: [{
-                        label: 'Persentase Lulusan',
-                        data: [65, 18, 15, 2],
-                        backgroundColor: [
-                            '#001F3F',
-                            '#003366',
-                            '#004080',
-                            '#0066CC'
-                        ],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: {
-                                callback: function(value) {
-                                    return value + '%';
-                                }
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.dataset.label || '';
-                                    const value = context.raw || 0;
-                                    return `${label}: ${value}%`;
-                                }
-                            }
-                        }
+            type: 'bar',
+            data: {
+                labels: careerLabels,
+                datasets: [{
+                label: 'Persentase Lulusan',
+                data: careerData,
+                backgroundColor: [
+                    '#001F3F',
+                    '#003366',
+                    '#004080'
+                ],
+                borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                    callback: function(value) {
+                        return value + '%';
+                    }
                     }
                 }
+                },
+                plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                    label: function(context) {
+                        const label = context.dataset.label || '';
+                        const value = context.raw || 0;
+                        return `${label}: ${value}%`;
+                    }
+                    }
+                }
+                }
+            }
             });
         });
         

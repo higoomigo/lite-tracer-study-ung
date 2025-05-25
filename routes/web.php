@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::get('/statistik-detail', [LandingController::class, 'detailStatistik'])->name('statistik-detail');
+Route::get('/api/statistics', [LandingController::class, 'getStatistics'])->name('api.statistics'); 
+// Route::get('/statistik-detail/api', [LandingController::class, 'getStatistics'])->name('statistik-detail');
 
+// In routes/web.php or routes/api.php (depending on how you want to set up the route)
+// or Route::get('/api/statistics', [LandingController::class, 'getStatistics']);
 
 
 // Breeze Routing
@@ -31,11 +35,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('pekerjaan', PekerjaanController::class);
     Route::resource('lanjut_studi', LanjutStudiController::class);
 
+    
+    Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     // Route::get('/')
 
 });
 
 require __DIR__.'/auth.php';
 
-Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
-Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');

@@ -22,7 +22,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold text-navy mb-4">Persebaran Lulusan</h3>
+                    <h3 class="text-xl font-semibold text-navy mb-4">Persebaran Karir Lulusan</h3>
                     <div class="aspect-w-16 aspect-h-9">
                         <canvas id="locationChart" class="w-full" style="display: block; box-sizing: border-box; height: 400px; width: 400px;" width="850" height="850"></canvas>
                     </div>
@@ -32,7 +32,7 @@
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold text-navy mb-4">Jalur Karir Lulusan</h3>
+                    <h3 class="text-xl font-semibold text-navy mb-4">Jenjang Lanjut Lulusan</h3>
                     <div class="aspect-w-16 aspect-h-9">
                         <canvas id="careerChart" class="w-full" style="display: block; box-sizing: border-box; height: 340px; width: 680px;" width="850" height="425"></canvas>
                     </div>
@@ -44,19 +44,19 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center stat-card scroll-reveal active">
-                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">92%</div>
+                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">{{ round($persentaseKarir['pekerjaan']) }}%</div>
                     <p class="text-gray-600">Lulusan Terserap Dunia Kerja</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center stat-card scroll-reveal active">
-                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">6</div>
+                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">{{ round($rataRataWaktuKerja) }}</div>
                     <p class="text-gray-600">Bulan Rata-rata Waktu Tunggu</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center stat-card scroll-reveal active">
-                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">18%</div>
+                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">{{ round($persentaseKarir['lanjut_studi']) }}%</div>
                     <p class="text-gray-600">Lulusan Melanjutkan Studi</p>
                 </div>
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center stat-card scroll-reveal active">
-                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">15%</div>
+                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">{{ round($persentaseKarir['wirausaha']) }}%</div>
                     <p class="text-gray-600">Lulusan Berwirausaha</p>
                 </div>
             </div>

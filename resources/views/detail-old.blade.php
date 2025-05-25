@@ -205,145 +205,53 @@
                     <button class="year-tab px-6 py-3 text-sm font-medium rounded-l-md border-r border-gray-200 active" data-year="2023">
                         Lulusan 2023
                     </button>
-                    <button class="year-tab px-6 py-3 text-sm font-medium rounded-r-md border border-gray-200" data-year="2024">
+                    <button class="year-tab px-6 py-3 text-sm font-medium rounded-r-md border border-gray-200" data-year="2020">
                         Lulusan 2024
                     </button>
                 </div>
             </div>
             
-            <!-- Statistics KERJA Cards -->
+            <!-- Statistics Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                <!-- Lulusan Terserap Dunia Kerja -->
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center stat-card scroll-reveal active">
-                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation" id="employmentRate"></div>
+                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">92%</div>
                     <p class="text-gray-600">Lulusan Terserap Dunia Kerja</p>
                 </div>
-                
-                <!-- Bulan Rata-rata Waktu Tunggu -->
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center stat-card scroll-reveal active">
-                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation" id="avgWaitingTime"></div>
+                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">6</div>
                     <p class="text-gray-600">Bulan Rata-rata Waktu Tunggu</p>
                 </div>
-
-                <!-- Lulusan Melanjutkan Studi -->
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center stat-card scroll-reveal active">
-                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation" id="studyContinuationRate"></div>
+                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">18%</div>
                     <p class="text-gray-600">Lulusan Melanjutkan Studi</p>
                 </div>
-
-                <!-- Lulusan Berwirausaha -->
                 <div class="bg-white rounded-lg shadow-lg p-6 text-center stat-card scroll-reveal active">
-                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation" id="entrepreneurshipRate"></div>
+                    <div class="text-4xl font-bold text-navy mb-2 count-number count-animation">15%</div>
                     <p class="text-gray-600">Lulusan Berwirausaha</p>
                 </div>
             </div>
-            <
+            
             <!-- Charts Section -->
-            <div class="bg-white rounded-lg  shadow-lg  mb-10 text-center">
-                <h3 class="text-xl font-semibold text-navy mb-4">Data Karir Alumni</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <!-- Career Path Chart -->
-                <div class="bg-white rounded-lg shadow-lg stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold p-6 text-navy mb-4">Jalur Karir Lulusan</h3>
-                    <div class="">
-                        <canvas id="careerPathChart"  style="display: block; box-sizing: border-box;"></canvas>
+                <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
+                    <h3 class="text-xl font-semibold text-navy mb-4">Jalur Karir Lulusan</h3>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <canvas id="careerPathChart" class="w-full" style="display: block; box-sizing: border-box; height: 400px; width: 400px;" width="850" height="850"></canvas>
                     </div>
                     <div class="mt-4 text-sm text-gray-600">
-                        <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
+                        <p>* Data berdasarkan tracer study tahun 2023</p>
                     </div>
                 </div>
                 
                 <!-- Location Chart -->
                 <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
                     <h3 class="text-xl font-semibold text-navy mb-4">Lokasi Kerja Lulusan</h3>
-                    <div class="">
-                        <canvas id="locationChart"  style="display: block; box-sizing: border-box; height: 400px" ></canvas>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <canvas id="locationChart" class="w-full" style="display: block; box-sizing: border-box; height: 340px; width: 680px;" width="850" height="425"></canvas>
                     </div>
                     <div class="mt-4 text-sm text-gray-600">
-                        <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold text-navy mb-4">Rata-rata Gaji Lulusan</h3>
-                    <div class="">
-                        <canvas id="avgSalaryChart"  style="display: block; box-sizing: border-box; height: 400px" ></canvas>
-                    </div>
-                    <div class="mt-4 text-sm text-gray-600">
-                        <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LANJUT STUDI -->
-            <div class="bg-white rounded-lg p-3 shadow-lg  mb-10 text-center">
-                <h3 class="text-xl font-semibold text-navy mb-4">Data Studi Alumni</h3>
-                
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-
-                <!-- Career Path Chart -->
-                <div class="bg-white rounded-lg shadow-lg stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold p-6 text-navy mb-4">Biaya Studi S1</h3>
-                    <div class="">
-                        <canvas id="studyFinancedByChart"  style="display: block; box-sizing: border-box;"></canvas>
-                    </div>
-                    <div class="mt-4 text-sm text-gray-600">
-                        <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
-                    </div>
-                </div>
-                
-                <!-- Location Chart -->
-                <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold text-navy mb-4">Sebaran Lanjut Pendidikan</h3>
-                    <div class="">
-                        <canvas id="studyLocationChart"  style="display: block; box-sizing: border-box; height: 400px" ></canvas>
-                    </div>
-                    <div class="mt-4 text-sm text-gray-600">
-                        <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold text-navy mb-4">Pembiayaan S2</h3>
-                    <div class="">
-                        <canvas id="studyScholarshipChart"  style="display: block; box-sizing: border-box; height: 400px" ></canvas>
-                    </div>
-                    <div class="mt-4 text-sm text-gray-600">
-                        <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LANJUT STUDI -->
-            <div class="bg-white rounded-lg p-3 shadow-lg  mb-10 text-center">
-                <h3 class="text-xl font-semibold text-navy mb-4">Data Usaha Alumni</h3>
-                
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-
-                <!-- Career Path Chart -->
-                <div class="bg-white rounded-lg shadow-lg stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold p-6 text-navy mb-4">Tipe Bisnis</h3>
-                    <div class="">
-                        <canvas id="businessTypeChart"  style="display: block; box-sizing: border-box;"></canvas>
-                    </div>
-                    <div class="mt-4 text-sm text-gray-600">
-                        <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
-                    </div>
-                </div>
-                
-                <!-- Location Chart -->
-                <div class="bg-white rounded-lg shadow-lg p-6 stat-card scroll-reveal active">
-                    <h3 class="text-xl font-semibold text-navy mb-4">Pembiayaan Bisnis</h3>
-                    <div class="">
-                        <canvas id="businessFundingChart"  style="display: block; box-sizing: border-box; height: 400px" ></canvas>
-                    </div>
-                    <div class="mt-4 text-sm text-gray-600">
-                        <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
+                        <p>* Data berdasarkan tracer study tahun 2023</p>
                     </div>
                 </div>
             </div>
@@ -814,68 +722,6 @@
     </footer>
 
     <script>
-        // Data JSON dari backend (contoh, ganti dengan variabel dinamis jika dari backend)
-        // const statisticsData = {
-        //     "year": "2023",
-        //     "pekerjaanStats": {
-            //     "job_location": {
-            //         "Luar Negeri": 2,
-            //         "": 9,
-            //         "Luar Provinsi Gorontalo": 3,
-            //         "Dalam Provinsi Gorontalo": 1
-            //     },
-            //     "job_status": {
-            //         "freelancer": 3,
-            //         "": 9,
-            //         "full_time": 2,
-            //         "part_time": 1
-        //          },
-            //     "waiting_time_avg": "11.0000",
-            //     "monthly_salary_avg": "7038163.1667"
-            //     },
-        //     "lanjutStudiStats": {
-        //     "study_location": {
-        //         "domestic": 4,
-        //         "international": 3,
-        //         "": 6
-        //     },
-        //     "study_financed_by": {
-        //         "other": 7,
-        //         "scholarship": 3,
-        //         "self": 1,
-        //         "parents": 2
-        //     },
-        //     "study_scholarship": {
-        //         "no": 3,
-        //         "yes": 4,
-        //         "": 6
-        //     }
-        //     },
-        //     "wirausahaStats": {
-        //     "business_type": {
-        //         "": 5,
-        //         "Lainnya": 4,
-        //         "Teknologi": 1
-        //     },
-        //     "business_funding": {
-        //         "": 5,
-        //         "Pinjaman": 1,
-        //         "Lainnya": 1,
-        //         "Pribadi": 3
-        //     }
-        //     },
-        //     "totalLulusan": 32,
-        //     "totalPekerjaan": 15,
-        //     "totalLanjutStudi": 13,
-        //     "totalWirausaha": 10,
-        //     "totalLulusanPercentages": {
-        //     "pekerjaan": 46.88,
-        //     "lanjut_studi": 40.63,
-        //     "wirausaha": 31.25
-        //     }
-        // };
-
-        
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -962,432 +808,121 @@
         });
         
         // ChartsCHARTSCHARTSCHARTSCHATRSCHARTSCHARTSCHARTSCHARTSCHARTSCHARTSCHARTSCHARTSCHARTSCHARTSCHARTSCHARTS
-        // Global chart instances for updating
-        // Chart.js global variables
-        let careerPathChart, locationChart, avgSalaryChart, studyLocationChart, studyFinancedByChart, studyScholarshipChart, businessTypeChart, businessFundingChart;
+        // let careerPathChart, locationChart, achievementChart;
+        
+            // Career Path Chart
+            // Data passed from the controller
+        
+            document.addEventListener('DOMContentLoaded', function() {
+                // Global chart instances for updating
+                let careerPathChart, locationChart;
 
-        // // Helper: Convert object values to array (with fallback for missing keys)
-        // function getValues(obj, keys) {
-        //     return keys.map(k => obj[k] ?? 0);
-        // }
+                // Function to fetch the data from the controller
+                function fetchData(year) {
+                    // Send a request to the backend API (change URL to your actual route)
+                    fetch(`/api/statistics?year=${year}`)  // Replace with your route for fetching data
+                        .then(response => response.json())
+                        .then(data => {
+                            // Update the charts or statistics with the fetched data
+                            updateCharts(data); // Update chart data dynamically
+                        })
+                        .catch(error => {
+                            console.error("Error fetching data:", error);
+                        });
+                }
 
-        // Fetch data dari endpoint (misal: /api/statistics?year=2023)
-        function fetchData(year) {
-            fetch(`/api/statistics?year=${year}`)
-                .then(response => response.json())
-                .then(statisticsData => {
-                    // Update statistic cards
-                    document.getElementById('employmentRate').textContent = `${Math.round(statisticsData.totalLulusanPercentages.pekerjaan)}%`;
-                    document.getElementById('avgWaitingTime').textContent = Math.round(statisticsData.pekerjaanStats.waiting_time_avg);
-                    document.getElementById('studyContinuationRate').textContent = `${Math.round(statisticsData.totalLulusanPercentages.lanjut_studi)}%`;
-                    document.getElementById('entrepreneurshipRate').textContent = `${Math.round(statisticsData.totalLulusanPercentages.wirausaha)}%`;
+                // Function to update the charts with new data
+                function updateCharts(data) {
+                    // Update the career path chart
+                    if (careerPathChart) {
+                        careerPathChart.data.datasets[0].data = data.pekerjaanStatus; // Example of updating dataset
+                        careerPathChart.update();  // Make sure the chart updates
+                    }
 
-                    // Update career path chart
-            if (careerPathChart) {
-                careerPathChart.data.datasets[0].data = [
-                    statisticsData.totalPekerjaan || 0,
-                    statisticsData.totalLanjutStudi || 0,
-                    statisticsData.totalWirausaha || 0,
-                    statisticsData.totalMengisiForm - (
-                        (statisticsData.totalPekerjaan || 0) +
-                        (statisticsData.totalLanjutStudi || 0) +
-                        (statisticsData.totalWirausaha || 0)
-                    )
-                ];
-                careerPathChart.update();
-            }
+                    // Update the location chart
+                    if (locationChart) {
+                        locationChart.data.datasets[0].data = data.lokasiPekerjaan; // Example of updating dataset
+                        locationChart.update();
+                    }
+                }
 
-            if(avgSalaryChart) {
-                avgSalaryChart.data.datasets[0].data = [
-                    statisticsData.pekerjaanStats.monthly_salary_groups.less_5jt || 0,
-                    statisticsData.pekerjaanStats.monthly_salary_groups.between_5_8jt	 || 0,
-                    statisticsData.pekerjaanStats.monthly_salary_groups.between_8_10jt || 0,
-                    statisticsData.pekerjaanStats.monthly_salary_groups.more_10jt || 0
-                ];
-                avgSalaryChart.update();
-            }
-            
-            if(studyFinancedByChart) {
-                studyFinancedByChart.data.datasets[0].data = [
-                    statisticsData.lanjutStudiStats.study_financed_by.parents || 0,
-                    statisticsData.lanjutStudiStats.study_financed_by.scholarship || 0,
-                    statisticsData.lanjutStudiStats.study_financed_by.self || 0,
-                    statisticsData.lanjutStudiStats.study_financed_by.other || 0,
-                ];
-                studyFinancedByChart.update();
-            }
-
-            if(studyLocationChart) {
-                studyLocationChart.data.datasets[0].data = [
-                    statisticsData.lanjutStudiStats.study_location.domestic || 0,
-                    statisticsData.lanjutStudiStats.study_location.international || 0,
-                ];
-                studyLocationChart.update();
-            }
-            
-            if(studyScholarshipChart) {
-                studyScholarshipChart.data.datasets[0].data = [
-                    statisticsData.lanjutStudiStats.study_scholarship.yes || 0,
-                    statisticsData.lanjutStudiStats.study_scholarship.no || 0,
-                ];
-                studyScholarshipChart.update();
-            }
-            if(businessTypeChart) {
-                businessTypeChart.data.datasets[0].data = [
-                    statisticsData.wirausahaStats.business_type.lainnya || 0,
-                    statisticsData.wirausahaStats.business_type.Teknologi || 0,
-                    statisticsData.wirausahaStats.business_type.kuliner || 0,
-                    statisticsData.wirausahaStats.business_type.fashion || 0,
-                    statisticsData.wirausahaStats.business_type.jasa || 0,
-                ];
-                businessTypeChart.update();
-            }
-            if(businessFundingChart) {
-                businessFundingChart.data.datasets[0].data = [
-                    statisticsData.wirausahaStats.business_funding.Pinjaman || 0,
-                    statisticsData.wirausahaStats.business_funding.Pribadi || 0,
-                    statisticsData.wirausahaStats.business_funding.Lainnya || 0,
-                    
-                ];
-                businessFundingChart.update();
-            }
-
-            // Update location chart
-            if (locationChart) {
-                locationChart.data.datasets[0].data = [
-                    statisticsData.pekerjaanStats.job_status.full_time || 0,
-                    statisticsData.pekerjaanStats.job_status.part_time || 0,
-                    statisticsData.pekerjaanStats.job_status.freelancer || 0
-                ];
-                locationChart.update();
-            }
-            })
-            .catch(error => {
-                console.error('Error fetching statistics data:', error);
-        });
-    }
-    
-            // Create the career path chart (Initial chart setup)
-            const careerPathCtx = document.getElementById('careerPathChart').getContext('2d');
-            careerPathChart = new Chart(careerPathCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Bekerja', 'Studi Lanjut', 'Wirausaha', 'Lainnya'],
-                    datasets: [{
-                        data: [0, 0, 0, 0],  // Initialize with zero data or use a fallback
-                        backgroundColor: [
-                            '#001F3F', '#003366', '#00509E', '#7FB3D5'
-                        ],
-                        borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                padding: 20,
-                                font: { size: 12 }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.label || '';
-                                    const value = context.raw || 0;
-                                    return `${label}: ${value} Orang`;
+                // Initialize Career Path Chart (Example)
+                const careerPathCtx = document.getElementById('careerPathChart').getContext('2d');
+                careerPathChart = new Chart(careerPathCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Bekerja', 'Studi Lanjut', 'Wirausaha', 'Lainnya'],
+                        datasets: [{
+                            data: [0, 0, 0, 0],  // Initialize with zero data or use a fallback
+                            backgroundColor: ['#4299E1', '#FBBF24', '#48BB78', '#A0AEC0'],
+                            borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 20,
+                                    font: { size: 12 }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.label}: ${context.raw}%`;
+                                    }
                                 }
                             }
-                        }
-                    },
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true
-                    }
-                }
-            });
-
-            // Create the location chart (Initial chart setup)
-            const locationCtx = document.getElementById('locationChart').getContext('2d');
-            locationChart = new Chart(locationCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Full-time', 'Part-time', 'Freelancer'],
-                    datasets: [{
-                        label: 'Jumlah Alumni',
-                        data: [0, 0, 0],  // Initialize with zero data or use a fallback
-                        backgroundColor: [
-                            '#001F3F', // Navy
-                            '#003366', // Dark Blue
-                            '#00509E', // Blue
-                        ],
-                        borderColor: [
-                            '#7FB3D5', // Light Blue
-                            '#7FB3D5',
-                            '#7FB3D5'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: { beginAtZero: true }
-                    }
-                }
-            });
-            // Create the location chart (Initial chart setup)
-            const avgSalaryCtx = document.getElementById('avgSalaryChart').getContext('2d');
-            avgSalaryChart = new Chart(avgSalaryCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['< 5 Juta', '5 - 8 Juta', '8 - 10 Juta', '> 10 Juta'],
-                    datasets: [{
-                        label: 'Jumlah Alumni',
-                        data: [0, 0, 0, 0],  // Initialize with zero data or use a fallback
-                        backgroundColor: [
-                            '#001F3F', // Navy
-                            '#003366', // Dark Blue
-                            '#00509E', // Blue
-                            '#7FB3D5'  // Light Blue
-                        ],
-                        borderColor: [
-                            '#7FB3D5', // Light Blue
-                            '#7FB3D5',
-                            '#7FB3D5',
-                            '#7FB3D5'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: { beginAtZero: true }
-                    }
-                }
-            });
-
-    
-            // PENDIDIKAN STUDI LANJUT STUNDI LANJUT
-            // Create the Location Study chart (Initial chart setup)
-            const studyLocationCtx = document.getElementById('studyLocationChart').getContext('2d');
-            studyLocationChart = new Chart(studyLocationCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Dalam Negeri', 'Luar Negeri'],
-                    datasets: [{
-                        data: [0, 0],  // Initialize with zero data or use a fallback
-                        backgroundColor: [
-                            '#001F3F', '#003366'
-                        ],
-                        borderColor: ['#FFFFFF', '#FFFFFF'],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                padding: 20,
-                                font: { size: 12 }
-                            }
                         },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.label || '';
-                                    const value = context.raw || 0;
-                                    return `${label}: ${value} Orang`;
-                                }
-                            }
+                        animation: {
+                            animateScale: true,
+                            animateRotate: true
                         }
-                    },
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true
                     }
-                }
-            });
+                });
 
-            const studyScholarshipCtx = document.getElementById('studyScholarshipChart').getContext('2d');
-            studyScholarshipChart = new Chart(studyScholarshipCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Beasiswa', 'Tanpa Beasiswa'],
-                    datasets: [{
-                        data: [0, 0],  // Initialize with zero data or use a fallback
-                        backgroundColor: [
-                            '#001F3F', '#003366'
-                        ],
-                        borderColor: ['#FFFFFF', '#FFFFFF'],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                padding: 20,
-                                font: { size: 12 }
-                            }
+                // Initialize Location Chart (Example)
+                const locationCtx = document.getElementById('locationChart').getContext('2d');
+                locationChart = new Chart(locationCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Dalam Daerah', 'Luar Daerah', 'Luar Negeri'],
+                        datasets: [{
+                            label: 'Jumlah Alumni',
+                            data: [0, 0, 0],  // Initialize with zero data or use a fallback
+                            backgroundColor: ['#2563eb', '#f59e42', '#22c55e'],
+                            borderColor: ['#1e40af', '#d97706', '#15803d'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: false }
                         },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.label || '';
-                                    const value = context.raw || 0;
-                                    return `${label}: ${value} Orang`;
-                                }
-                            }
+                        scales: {
+                            y: { beginAtZero: true }
                         }
-                    },
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true
                     }
-                }
-            });
+                });
 
-            const studyFinancedByCtx = document.getElementById('studyFinancedByChart').getContext('2d');
-            studyFinancedByChart = new Chart(studyFinancedByCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Orang Tua/Keluarga','Beasiswa', 'Sendiri', 'Lainnya'],
-                    datasets: [{
-                        label: 'Jumlah Alumni',
-                        data: [0, 0, 0, 0],  // Initialize with zero data or use a fallback
-                        backgroundColor: [
-                            '#001F3F', // Navy
-                            '#003366', // Dark Blue
-                            '#00509E', // Blue
-                            '#7FB3D5'  // Light Blue
-                        ],
-                        borderColor: [
-                            '#7FB3D5', // Light Blue
-                            '#7FB3D5',
-                            '#7FB3D5',
-                            '#7FB3D5'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: { beginAtZero: true }
-                    }
-                }
-            });
+                // Set default year to 2023 and load data
+                fetchData(2023);  // Initial data load for 2023
 
-            const businessTypeCtx = document.getElementById('businessTypeChart').getContext('2d');
-            businessTypeChart = new Chart(businessTypeCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Kuliner', 'Fashion', 'Teknologi', 'Jasa', 'Lainnya'],
-                    datasets: [{
-                        data: [0, 0,0,0,0],  // Initialize with zero data or use a fallback
-                        backgroundColor: [
-                            '#001F3F', '#003366', '#00509E', '#7FB3D5', '#7FB3D5'
-                        ],
-                        borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                padding: 20,
-                                font: { size: 12 }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.label || '';
-                                    const value = context.raw || 0;
-                                    return `${label}: ${value} Orang`;
-                                }
-                            }
-                        }
-                    },
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true
-                    }
-                }
-            });
-
-            const businessFundingCtx = document.getElementById('businessFundingChart').getContext('2d');
-            businessFundingChart = new Chart(businessFundingCtx, {
-                type: 'pie',
-                data: {
-                    labels: ['Pinjaman', 'Pribadi', 'Lainnya'],
-                    datasets: [{
-                        data: [0, 0,0],  // Initialize with zero data or use a fallback
-                        backgroundColor: [
-                            '#001F3F', '#003366', '#00509E'
-                        ],
-                        borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF'],
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                padding: 20,
-                                font: { size: 12 }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.label || '';
-                                    const value = context.raw || 0;
-                                    return `${label}: ${value} Orang`;
-                                }
-                            }
-                        }
-                    },
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true
-                    }
-                }
-            });
-
-            // Set default year to 2023 and load data
-            fetchData(2023);
-
-            // Event listener for year selection (User clicks the year button)
-            document.querySelectorAll('.year-tab').forEach(button => {
-                button.addEventListener('click', function() {
-                    const selectedYear = this.dataset.year;
-                    fetchData(selectedYear);  // Fetch and update data based on selected year
+                // Event listener for year selection (User clicks the year button)
+                document.querySelectorAll('.year-tab').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const selectedYear = this.dataset.year;
+                        fetchData(selectedYear);  // Fetch and update data based on selected year
+                    });
                 });
             });
+        
 
+    
 
         // Achievement Chart
         //     const achievementCtx = document.getElementById('achievementChart').getContext('2d');

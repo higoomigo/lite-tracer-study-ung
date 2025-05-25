@@ -11,8 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lanjut_studis', function (Blueprint $table) {
+        Schema::create('lanjut_studi', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Assuming you're linking to the User model
+            $table->string('plan_study'); // Yes/No
+            $table->string('study_location')->nullable(); // Domestic or International
+            $table->string('study_financed_by'); // Scholarship, Parent's Support, Self, Other
+            $table->string('study_financed_by_other')->nullable(); // If 'Other' is chosen, specify source
+            $table->string('study_scholarship')->nullable(); // Yes/No
+            $table->string('scholarship_type')->nullable(); // If yes, specify scholarship type
+            $table->string('scholarship_type_other')->nullable(); // If scholarship type is "Other"
+            $table->string('university_name')->nullable(); // Name of the university
+            $table->string('study_program')->nullable(); // The study program they joined
+            $table->date('study_start_date')->nullable(); // The start date of the further studies
             $table->timestamps();
         });
     }

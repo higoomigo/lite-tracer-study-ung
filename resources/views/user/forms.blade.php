@@ -51,7 +51,16 @@
         <div class="flex-1">
         <h2 class="text-lg font-semibold text-gray-800">Pendataan Lanjut Studi Alumni</h2>
         </div>
-        <a href="{{ route('lanjut_studi.create') }}" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">Isi Formulir</a>
+        @if($hasFilledFormLanjutStudi)
+            <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-sm text-green-700 font-semibold">Sudah diisi</span>
+            </div>
+        @else
+            <a href="{{ route('lanjut_studi.create') }}" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition">Isi Formulir</a>
+        @endif
     </div>
     <!-- Wirausaha -->
     <div class="flex items-center p-6 bg-white rounded-lg shadow-md space-x-6 mb-4">
@@ -64,8 +73,18 @@
         <div class="flex-1">
         <h2 class="text-lg font-semibold text-gray-800">Pendataan Wirausaha Alumni</h2>
         </div>
-        <a href="{{ route('wirausaha.create') }}" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition">Isi Formulir</a>
-    </div>
+        @if($hasFilledFormWirausaha)
+            
+            <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+            <span class="text-sm text-yellow-700 font-semibold">Sudah diisi</span>
+            </div>
+        @else
+            <a href="{{ route('wirausaha.create') }}" class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition">Isi Formulir</a>
+        @endif
+        </div>
 
     
 </main>
