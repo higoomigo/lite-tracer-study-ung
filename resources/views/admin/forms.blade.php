@@ -20,6 +20,7 @@
                     <th class="py-2 px-4 text-left">No</th>
                     <th class="py-2 px-4 text-left">Nama Alumni</th>
                     <th class="py-2 px-4 text-left">Lulusan</th>
+                    <th class="py-2 px-4 text-left">Slip Gaji</th>
                     <th class="py-2 px-4 text-left">Tanggal Pengisian</th>
                     <th class="py-2 px-4 text-left">Aksi</th>
                 </tr>
@@ -30,6 +31,7 @@
                     <td class="py-2 px-4">{{ $loop->iteration }}</td>
                     <td class="py-2 px-4">{{ $work->user->name ?? '-' }}</td>
                     <td class="py-2 px-4">{{ $work->user->graduate_year ?? '-' }}</td>
+                    <td class="py-2 px-4"><img class="w-20" src="{{ asset('storage/' . $work->bukti_pekerjaan) }}" alt="Bukti Gaji"></td>
                     <td class="py-2 px-4">{{ $work->created_at->format('d M Y H:i') }}</td>
                     <td class="py-2 px-4">
                         <form  method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?');">

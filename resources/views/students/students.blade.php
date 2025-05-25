@@ -3,7 +3,7 @@
 @section('content')
     <main class="p-6">
 
-        <h3 class="text-lg font-bold text-gray-800 mb-4">Filter Alumni berdasarkan Angkatan</h3>
+        <h1 class="text-xl font-bold text-gray-800 mb-4">Filter Alumni berdasarkan Angkatan</h3>
 
         <!-- Form filter -->
         <form action="{{ route('admin.student') }}" method="GET" class="mb-6">

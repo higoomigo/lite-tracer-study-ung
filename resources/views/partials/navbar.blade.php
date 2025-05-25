@@ -11,7 +11,6 @@
             <a href="{{ url('/') }}" class="hover:text-blue-200 transition">Beranda</a>
             <a href="{{ url('/#statistik') }}" class="hover:text-blue-200 transition">Statistik</a>
             <a href="{{ url('/#programs') }}" class="hover:text-blue-200 transition">Program Studi</a>
-            <a href="{{ url('/#testimonials') }}" class="hover:text-blue-200 transition">Testimonial</a>
             <a href="{{ url('/#contact') }}" class="hover:text-blue-200 transition">Kontak</a>
             @if(Route::has('login'))
                 @auth

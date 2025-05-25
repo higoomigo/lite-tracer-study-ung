@@ -17,8 +17,8 @@
         </div>
     @endif
     <div class="mb-8">
-        <h1 class="text-2xl font-bold text-gray-800 mb-2">Form Tracer Pekerjaan</h1>
-        <p>Jawab pertanyaan berikut untuk mengisi pendataan pekerjaan Alumni</p>
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">Form Tracer Wirausaha</h1>
+        <p>Jawab pertanyaan berikut untuk mengisi pendataan wirausaha Alumni</p>
     </div>  
 
     <form action="{{ route('wirausaha.store') }}" method="POST" x-data="wirausahaForm()" @submit.prevent="validateForm" class="p-6 bg-white rounded-lg shadow-md max-w-7xl mx-auto">

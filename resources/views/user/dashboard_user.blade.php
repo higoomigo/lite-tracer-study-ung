@@ -46,7 +46,7 @@
                         <p class="text-lg text-gray-600"><strong>Status</strong></p>
                         <p>{{ Auth::user()->status }}</p>
                     </div>
-                    <div>
+                    {{-- <div>
                         <p class="text-lg text-gray-600"><strong>Perkenalkan Bakat Anda</strong></p>
                         @if(Auth::user()->talent)
                             <p>{{ Auth::user()->talent }}</p>
@@ -57,7 +57,7 @@
                                 <button type="submit" class="bg-navy text-white px-4 py-2 rounded hover:bg-navyLight transition">Simpan</button>
                             </form>
                         @endif
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

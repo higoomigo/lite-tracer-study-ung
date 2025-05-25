@@ -9,7 +9,7 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Jelajahi Keberhasilan Lulusan TI - UNG</h1>
             <p class="text-xl md:text-2xl mb-8 animate__animated animate__fadeInUp">Lulusan kami telah tersebar di dunia kerja dan pendidikan di dalam negeri dan luar negeri.</p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-                <a href="#statistics" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg">Lihat Statistik Lulusan Kami</a>
+                <a href="{{ route('statistik-detail') }}" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg">Lihat Statistik Lulusan Kami</a>
                 <a href="#programs" class="bg-white text-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-1">Pelajari Program Studi</a>
             </div>
         </div>

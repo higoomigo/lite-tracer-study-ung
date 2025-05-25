@@ -98,6 +98,13 @@ class AdminController extends Controller
             'tanpa_beasiswa' => lanjutStudi::where('study_scholarship', 'no')->count(),
         ];
 
+        $biayaStudi = [
+            'scholarship' => LanjutStudi::where('study_financed_by', 'scholarship')->count(),
+            'parents' => LanjutStudi::where('study_financed_by', 'parents')->count(),
+            'self' => LanjutStudi::where('study_financed_by', 'self')->count(),
+            'other' => LanjutStudi::where('study_financed_by', 'other')->count(),
+        ];
+
         $wirausaha = [
             'modal_pribadi' => Wirausaha::where('business_funding', 'Pribadi')->count(),
             'pinjaman' => Wirausaha::where('business_funding', 'Pinjaman')->count(),
@@ -115,6 +122,7 @@ class AdminController extends Controller
             'pertimbanganWirausaha',
             'memilikiUsaha',
             'minatStudi',
+            'biayaStudi',
             'rencanaStudi',
             'lanjutStudi',
             'wirausaha',

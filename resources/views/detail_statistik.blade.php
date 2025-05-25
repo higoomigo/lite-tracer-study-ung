@@ -351,7 +351,7 @@
             </div>
             
             <!-- Waiting Time Progress Bar -->
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-12 scroll-reveal active">
+            {{-- <div class="bg-white rounded-lg shadow-lg p-6 mb-12 scroll-reveal active">
                 <h3 class="text-xl font-semibold text-navy mb-4">Rata-rata Waktu Tunggu Lulusan</h3>
                 
                 <div class="mb-6">
@@ -387,10 +387,10 @@
                 <div class="mt-4 text-sm text-gray-600">
                     <p>* Waktu tunggu dihitung sejak kelulusan hingga mendapatkan pekerjaan pertama</p>
                 </div>
-            </div>
+            </div> --}}
             
             <!-- Statistics Table -->
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-12 scroll-reveal overflow-x-auto active">
+            {{-- <div class="bg-white rounded-lg shadow-lg p-6 mb-12 scroll-reveal overflow-x-auto active">
                 <h3 class="text-xl font-semibold text-navy mb-4">Tabel Statistik Lulusan</h3>
                 
                 <table class="stats-table">
@@ -431,11 +431,11 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> --}}
             
-            <div class="text-center">
+            {{-- <div class="text-center">
                 <a href="#" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg inline-block">Pelajari Lebih Lanjut</a>
-            </div>
+            </div> --}}
         </div>
     </section>
 

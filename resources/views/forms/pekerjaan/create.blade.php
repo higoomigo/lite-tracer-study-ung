@@ -81,7 +81,7 @@
                         >
                     </div>
                     <div>
-                        <label for="bukti_pekerjaan" class="block text-sm font-semibold">Upload Bukti Pekerjaan (opsional)</label>
+                        <label for="bukti_pekerjaan" class="block text-sm font-semibold">Upload Slip Gaji</label>
                         <input 
                             type="file" 
                             id="bukti_pekerjaan" 
@@ -297,11 +297,13 @@
                         hasBusiness: '',
                         business_name: '',
                         interest_return_school: '',
+                        bukti_pekerjaan: null, // Tambahan untuk input gambar
                         isValid: false,
 
                         validateEmployed() {
                             if (!this.employed) return false;
                             if (this.employed === 'yes') {
+                                // bukti_pekerjaan opsional, tidak perlu dicek
                                 return this.industri && this.status_pekerjaan && this.gaji && this.lokasi_pekerjaan && this.waktu_tunggu && this.faktor_pekerjaan;
                             }
                             if (this.employed === 'no') {
@@ -322,8 +324,23 @@
                             if (!this.interest_return_school) return false;
                             return true;
                         },
+                        validateImage() {
+                            // Validasi file gambar jika ada
+                            if (this.bukti_pekerjaan) {
+                                const file = this.bukti_pekerjaan;
+                                const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+                                if (!allowedTypes.includes(file.type)) {
+                                    alert('Format gambar harus JPG, JPEG, atau PNG.');
+                                    return false;
+                                }
+                                if (file.size > 2 * 1024 * 1024) {
+                                    alert('Ukuran gambar maksimal 2MB.');
+                                    return false;
+                                }
+                            }
+                            return true;
+                        },
                         validateForm(event) {
-                            // Focus the first invalid input if any
                             if (!this.validateEmployed()) {
                                 alert('Silakan lengkapi semua data pekerjaan.');
                                 this.isValid = false;
@@ -342,6 +359,10 @@
                                 });
                                 return;
                             }
+                            if (!this.validateImage()) {
+                                this.isValid = false;
+                                return;
+                            }
                             // Ensure all fields are enabled before submit (for hidden fields)
                             Array.from(event.target.elements).forEach(el => {
                                 if (el.hasAttribute('disabled')) el.removeAttribute('disabled');
@@ -356,10 +377,11 @@
                                     this.everEmployed, this.last_job_title, this.last_company, this.reason_left, this.current_activity,
                                     this.never_employed_reason, this.never_employed_looking, this.never_employed_business,
                                     this.desired_industry, this.plan_study,
-                                    this.hasBusiness, this.business_name, this.interest_return_school
+                                    this.hasBusiness, this.business_name, this.interest_return_school,
+                                    this.bukti_pekerjaan // tambahkan watcher untuk gambar
                                 ],
                                 () => {
-                                    this.isValid = this.validateEmployed() && this.validateGeneral();
+                                    this.isValid = this.validateEmployed() && this.validateGeneral() && this.validateImage();
                                 },
                                 { deep: true }
                             );
@@ -384,6 +406,10 @@
                                         this.lokasi_pekerjaan = '';
                                         this.waktu_tunggu = '';
                                         this.faktor_pekerjaan = '';
+                                        this.bukti_pekerjaan = null;
+                                        // Reset file input jika berpindah dari employed yes
+                                        const fileInput = document.getElementById('bukti_pekerjaan');
+                                        if (fileInput) fileInput.value = '';
                                     }
                                 }
                             });
@@ -395,6 +421,21 @@
                         }
                     }
                 }
+                document.addEventListener('alpine:init', () => {
+                    Alpine.data('tracerForm', tracerForm);
+                });
+                // Listener untuk input file
+                document.addEventListener('DOMContentLoaded', function () {
+                    const fileInput = document.getElementById('bukti_pekerjaan');
+                    if (fileInput) {
+                        fileInput.addEventListener('change', function (e) {
+                            const alpineComponent = Alpine.closestDataStack(fileInput)?.[0];
+                            if (alpineComponent) {
+                                alpineComponent.bukti_pekerjaan = fileInput.files[0] || null;
+                            }
+                        });
+                    }
+                });
                 </script>
 
                 <!-- Button Submit -->

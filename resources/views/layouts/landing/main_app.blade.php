@@ -194,9 +194,9 @@
                     <h4 class="text-lg font-semibold mb-4">Link Cepat</h4>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Beranda</a></li>
-                        <li><a href="#statistics" class="text-gray-300 hover:text-white transition">Statistik Lulusan</a></li>
+                        <li><a href="{{ route('statistik-detail') }}" class="text-gray-300 hover:text-white transition">Statistik Lulusan</a></li>
                         <li><a href="#programs" class="text-gray-300 hover:text-white transition">Program Studi</a></li>
-                        <li><a href="#testimonials" class="text-gray-300 hover:text-white transition">Testimonial</a></li>
+                        {{-- <li><a href="#testimonials" class="text-gray-300 hover:text-white transition">Testimonial</a></li> --}}
                         <li><a href="#contact" class="text-gray-300 hover:text-white transition">Kontak</a></li>
                     </ul>
                 </div>
@@ -206,8 +206,8 @@
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Sistem Informasi</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Pendidikan Teknologi Informasi</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Ilmu Komputer</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Teknik Informatika</a></li>
+                        {{-- <li><a href="#" class="text-gray-300 hover:text-white transition">Ilmu Komputer</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Teknik Informatika</a></li> --}}
                     </ul>
                 </div>
                 
