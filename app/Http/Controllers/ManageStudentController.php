@@ -50,7 +50,8 @@ class ManageStudentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $student = User::findOrFail($id);
+        return view('students.profile', compact('student'));
     }
 
     /**

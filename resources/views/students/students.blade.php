@@ -28,6 +28,7 @@
                     <th class="py-2 px-4 text-left">Nama Alumni</th>
                     <th class="py-2 px-4 text-left">Angkatan</th>
                     <th class="py-2 px-4 text-left">Tanggal Pengisian</th>
+                    <th class="py-2 px-4 text-left">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,7 @@
                         <td class="py-2 px-4">{{ $student->name ?? '-' }}</td>
                         <td class="py-2 px-4">{{ $student->graduate_year ?? '-' }}</td>
                         <td class="py-2 px-4">{{ $student->created_at->format('d M Y H:i') }}</td>
+                        <td class="py-2 px-4"><a href="{{ route('admin.student.show', $student->id) }}">Lihat</a></td>
                     </tr>
                 @endforeach
             </tbody>

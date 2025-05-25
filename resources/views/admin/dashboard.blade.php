@@ -7,7 +7,7 @@
 <main class="p-6">
     <div class="mb-8">
         <h1 class="text-2xl font-bold text-gray-800 mb-2">Welcome back, Admin!</h1>
-        <p class="text-gray-600">Here's what's happening with your school today.</p>
+        <p class="text-gray-600">Pantau tracking lulusan Teknik Informatika UNG.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div class="stat-card scroll-reveal bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500" data-sr-id="1" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: transform 0.3s, box-shadow 0.3s, opacity 1s ease-in-out 0.2s, transform 1s ease-in-out 0.2s;">
@@ -18,7 +18,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <h2 class="text-gray-600 text-sm">Total Students</h2>
+                    <h2 class="text-gray-600 text-sm">Total Alumni</h2>
                     <p class="text-2xl font-semibold text-gray-800">{{ $users->count() }}</p>
                     
                 </div>
@@ -87,16 +87,18 @@
     </div>
     
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 ">
     <!-- Studi Lanjut -->
-    <div class="bg-white rounded-lg shadow-md p-6">
+    <div class=""></div>
+    <div class="bg-white rounded-lg shadow-md p-6 h-96 w-96">
         <h2 class="text-lg font-semibold text-gray-800 mb-4">Studi Lanjut (Dalam vs Luar Negeri)</h2>
         <canvas id="studiLanjutLokasiChart" height="220"></canvas>
     </div>
-    <div class="bg-white rounded-lg shadow-md p-6">
+    <div class="bg-white rounded-lg shadow-md p-6 h-96 w-96">
         <h2 class="text-lg font-semibold text-gray-800 mb-4">Studi Lanjut dengan Beasiswa</h2>
         <canvas id="studiLanjutBeasiswaChart" height="220"></canvas>
     </div>
+    <div class=""></div>
     <!-- Wirausaha -->
     
 </div>
@@ -462,8 +464,8 @@
                         pekerjaanStatus['unemployed'] ?? 0,
                         
                     ],
-                    backgroundColor: ['#2563eb', '#f59e42', '#22c55e', '#a78bfa'],
-                    borderColor: ['#1e40af', '#d97706', '#15803d', '#7c3aed'],
+                    backgroundColor: ['#001F3F', '#003366', '#00509E', '#7FB3D5'],
+                    borderColor: ['#FFFFFF','#FFFFFF', '#FFFFFF', '#FFFFFF'],
                     borderWidth: 1
                 }]
             },
@@ -486,8 +488,8 @@
                         kelompokGaji['5-10jt'] ?? 0,
                         kelompokGaji['10jt+'] ?? 0
                     ],
-                    backgroundColor: ['#2563eb', '#f59e42', '#22c55e', '#a78bfa'],
-                    borderColor: ['#1e40af', '#d97706', '#15803d', '#7c3aed'],
+                   backgroundColor: ['#001F3F', '#003366', '#00509E', '#7FB3D5'],
+                    borderColor: ['#FFFFFF','#FFFFFF', '#FFFFFF', '#FFFFFF'],
                     borderWidth: 1
                 }]
             },
@@ -511,8 +513,8 @@
                         lokasiPekerjaan['luar_daerah'] ?? 0,
                         lokasiPekerjaan['luar_negeri'] ?? 0
                     ],
-                    backgroundColor: ['#2563eb', '#f59e42', '#22c55e'],
-                    borderColor: ['#1e40af', '#d97706', '#15803d'],
+                    backgroundColor: ['#001F3F', '#003366', '#00509E'],
+                    borderColor: ['#FFFFFF','#FFFFFF', '#FFFFFF'],
                     borderWidth: 1
                 }]
             },
@@ -535,8 +537,8 @@
                         lanjutStudi['domestic'] ?? 0,
                         lanjutStudi['international'] ?? 0
                     ],
-                    backgroundColor: ['#2563eb', '#a78bfa'],
-                    borderColor: ['#1e40af', '#7c3aed'],
+                    backgroundColor: [ '#00509E', '#7FB3D5'],
+                    borderColor: ['#FFFFFF', '#FFFFFF'],
                     borderWidth: 1
                 }]
             },
@@ -558,8 +560,8 @@
                         lanjutStudi['beasiswa'] ?? 0,
                         lanjutStudi['tanpa_beasiswa'] ?? 0
                     ],
-                    backgroundColor: ['#22c55e', '#2563eb'],
-                    borderColor: ['#15803d', '#1e40af'],
+                    backgroundColor: ['#00509E', '#7FB3D5'],
+                    borderColor: ['#FFFFFF', '#FFFFFF'],
                     borderWidth: 1
                 }]
             },
@@ -582,8 +584,8 @@
                         jenisPekerjaan['part_time'] ?? 0,
                         jenisPekerjaan['freelancer'] ?? 0
                     ],
-                    backgroundColor: ['#f59e42', '#2563eb', '#fde047'],
-                    borderColor: ['#d97706', '#1e40af', '#eab308'],
+                    backgroundColor: [ '#00509E', '#7FB3D5', '#22c55e'],
+                    borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF'],
                     borderWidth: 1
                 }]
             },
@@ -606,8 +608,8 @@
                         wirausaha['pinjaman'] ?? 0,
                         wirausaha['investor'] ?? 0
                     ],
-                    backgroundColor: ['#22c55e', '#fde047', '#2563eb'],
-                    borderColor: ['#15803d', '#eab308', '#1e40af'],
+                    backgroundColor: ['#00509E', '#7FB3D5', '#22c55e'],
+                    borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF'],
                     borderWidth: 1
                 }]
             },
@@ -632,8 +634,8 @@
                         alasanTidakBekerja['health'] ?? 0,
                         alasanTidakBekerja['other'] ?? 0
                     ],
-                    backgroundColor: ['#f59e42', '#2563eb', '#22c55e', '#a78bfa', '#64748b'],
-                    borderColor: ['#d97706', '#1e40af', '#15803d', '#7c3aed', '#334155'],
+                    backgroundColor: ['#001F3F', '#003366', '#00509E', '#7FB3D5', '#B3C6E0'],
+                    borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
                     borderWidth: 1
                 }]
             },

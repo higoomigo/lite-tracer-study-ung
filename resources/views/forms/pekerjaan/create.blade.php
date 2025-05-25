@@ -81,6 +81,19 @@
                         >
                     </div>
                     <div>
+                        <label for="bukti_pekerjaan" class="block text-sm font-semibold">Upload Bukti Pekerjaan (opsional)</label>
+                        <input 
+                            type="file" 
+                            id="bukti_pekerjaan" 
+                            name="bukti_pekerjaan" 
+                            class="mt-2 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4
+                                   file:rounded-md file:border-0 file:text-sm file:font-semibold
+                                   file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                            accept="image/*"
+                        >
+                        <p class="text-xs text-gray-500 mt-1">Format gambar: JPG, PNG, atau JPEG. Maksimal 2MB.</p>
+                    </div>
+                    <div>
                         <label for="lokasi_pekerjaan" class="block text-sm font-semibold">Dimana lokasi tempat Anda bekerja?</label>
                         <select id="lokasi_pekerjaan" name="lokasi_pekerjaan" class="mt-2 p-3 w-full bg-white border border-gray-300 rounded-md"
                             x-model="lokasi_pekerjaan" :required="employed === 'yes'">

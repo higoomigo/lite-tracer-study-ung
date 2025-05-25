@@ -9,7 +9,9 @@
         <p class="text-gray-600">Menu Pengontrolan Formulir</p>
     </div>
 
-    <h3 class="text-lg font-bold text-gray-800 ">Formulir Pekerjaan</h3>
+    <div class="bg-blue-600 w-fit p-2 rounded-lg mb-3">
+        <h3 class="text-lg font-bold text-white ">Formulir Pekerjaan</h3>
+    </div>
     <div class="overflow-x-auto rounded shadow mb-6 px-6 border-2">
         <p class="text-gray-600 mb-2">Data pengisian Formulir Pekerjaan</p>
         <table id="pekerjaanTable" class="min-w-full bg-white text-sm ">
@@ -17,6 +19,7 @@
                 <tr>
                     <th class="py-2 px-4 text-left">No</th>
                     <th class="py-2 px-4 text-left">Nama Alumni</th>
+                    <th class="py-2 px-4 text-left">Lulusan</th>
                     <th class="py-2 px-4 text-left">Tanggal Pengisian</th>
                     <th class="py-2 px-4 text-left">Aksi</th>
                 </tr>
@@ -26,6 +29,7 @@
                 <tr class="border-b hover:bg-gray-50">
                     <td class="py-2 px-4">{{ $loop->iteration }}</td>
                     <td class="py-2 px-4">{{ $work->user->name ?? '-' }}</td>
+                    <td class="py-2 px-4">{{ $work->user->graduate_year ?? '-' }}</td>
                     <td class="py-2 px-4">{{ $work->created_at->format('d M Y H:i') }}</td>
                     <td class="py-2 px-4">
                         <form  method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
@@ -40,23 +44,112 @@
         </table>
     </div>
 
-    <h3 class="text-lg font-bold text-gray-800">Formulir Lanjut Studi</h3>
-    <p class="text-gray-600 mb-2">Data pengisian Formulir Lanjut Studi</p>
+    <div class="bg-green-600 w-fit p-2 rounded-lg mb-3">
+        <h3 class="text-lg font-bold text-white ">Formulir Lanjut Studi</h3>
+    </div>
+    
+    <div class="overflow-x-auto rounded shadow mb-6 px-6 border-2">
+        <p class="text-gray-600 mb-2">Data pengisian Formulir Lanjut Studi</p>
+        <table id="lanjutStudiTable" class="min-w-full bg-white text-sm ">
+            <thead class="bg-gray-100 text-gray-700">
+                <tr>
+                    <th class="py-2 px-4 text-left">No</th>
+                    <th class="py-2 px-4 text-left">Nama Alumni</th>
+                    <th class="py-2 px-4 text-left">Lulusan</th>
+                    <th class="py-2 px-4 text-left">Tanggal Pengisian</th>
+                    <th class="py-2 px-4 text-left">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach ($lanjutStudi as $study)  
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="py-2 px-4">{{ $loop->iteration }}</td>
+                    <td class="py-2 px-4">{{ $study->user->name ?? '-' }}</td>
+                    <td class="py-2 px-4">{{ $study->user->graduate_year ?? '-' }}</td>
+                    <td class="py-2 px-4">{{ $study->created_at->format('d M Y H:i') }}</td>
+                    <td class="py-2 px-4">
+                        <form  method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
 
-    <h3 class="text-lg font-bold text-gray-800">Formulir Wirausaha</h3>
-    <p class="text-gray-600 mb-2">Data pengisian Formulir Wirausaha</p>
+    <div class="bg-yellow-600 w-fit p-2 rounded-lg mb-3">
+        <h3 class="text-lg font-bold text-white ">Formulir Wirausaha</h3>
+    </div>
+    <div class="overflow-x-auto rounded shadow mb-6 px-6 border-2">
+        <p class="text-gray-600 mb-2">Data pengisian Formulir Wirausaha</p>
+        <table id="wirausahaTable" class="min-w-full bg-white text-sm ">
+            <thead class="bg-gray-100 text-gray-700">
+                <tr>
+                    <th class="py-2 px-4 text-left">No</th>
+                    <th class="py-2 px-4 text-left">Nama Alumni</th>
+                    <th class="py-2 px-4 text-left">Lulusan</th>
+                    <th class="py-2 px-4 text-left">Tanggal Pengisian</th>
+                    <th class="py-2 px-4 text-left">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach ($wirausaha as $usaha)  
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="py-2 px-4">{{ $loop->iteration }}</td>
+                    <td class="py-2 px-4">{{ $usaha->user->name ?? '-' }}</td>
+                    <td class="py-2 px-4">{{ $usaha->user->graduate_year ?? '-' }}</td>
+                    <td class="py-2 px-4">{{ $usaha->created_at->format('d M Y H:i') }}</td>
+                    <td class="py-2 px-4">
+                        <form  method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-red-600 hover:underline">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
 
 
 </main>
 
 <script>
-    const dataTable = new simpleDatatables.DataTable("#myTable", {
+    const dataTablePekerjaan = new simpleDatatables.DataTable("#pekerjaanTable", {
         searchable: true,
         fixedHeight: false,
         perPage: 5,
         labels: {
             placeholder: "Cari...",
-            perPage: "{select} data per halaman",
+            perPage: " data per halaman",
+            noRows: "Tidak ada data",
+            info: "Menampilkan {start} sampai {end} dari {rows} data"
+        }
+    });
+
+    const dataTableStudi = new simpleDatatables.DataTable("#lanjutStudiTable", {
+        searchable: true,
+        fixedHeight: false,
+        perPage: 5,
+        labels: {
+            placeholder: "Cari...",
+            perPage: " data per halaman",
+            noRows: "Tidak ada data",
+            info: "Menampilkan {start} sampai {end} dari {rows} data"
+        }
+    });
+
+    const dataTableWirausaha = new simpleDatatables.DataTable("#wirausahaTable", {
+        searchable: true,
+        fixedHeight: false,
+        perPage: 5,
+        labels: {
+            placeholder: "Cari...",
+            perPage: " data per halaman",
             noRows: "Tidak ada data",
             info: "Menampilkan {start} sampai {end} dari {rows} data"
         }

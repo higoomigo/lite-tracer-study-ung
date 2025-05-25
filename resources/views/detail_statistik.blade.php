@@ -319,12 +319,13 @@
             </div>
 
             <!-- LANJUT STUDI -->
+            
             <div class="bg-white rounded-lg p-3 shadow-lg  mb-10 text-center">
-                <h3 class="text-xl font-semibold text-navy mb-4">Data Usaha Alumni</h3>
+            <h3 class="text-xl font-semibold text-navy mb-4">Data Usaha Alumni</h3>
                 
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class=""></div>
                 <!-- Career Path Chart -->
                 <div class="bg-white rounded-lg shadow-lg stat-card scroll-reveal active">
                     <h3 class="text-xl font-semibold p-6 text-navy mb-4">Tipe Bisnis</h3>
@@ -346,6 +347,7 @@
                         <p>* Data berdasarkan tracer study lulusan tahun 2023</p>
                     </div>
                 </div>
+                <div class=""></div>
             </div>
             
             <!-- Waiting Time Progress Bar -->
@@ -988,11 +990,11 @@
                     statisticsData.totalPekerjaan || 0,
                     statisticsData.totalLanjutStudi || 0,
                     statisticsData.totalWirausaha || 0,
-                    statisticsData.totalMengisiForm - (
-                        (statisticsData.totalPekerjaan || 0) +
-                        (statisticsData.totalLanjutStudi || 0) +
-                        (statisticsData.totalWirausaha || 0)
-                    )
+                    // statisticsData.totalMengisiForm - (
+                    //     (statisticsData.totalPekerjaan || 0) +
+                    //     (statisticsData.totalLanjutStudi || 0) +
+                    //     (statisticsData.totalWirausaha || 0)
+                    // )
                 ];
                 careerPathChart.update();
             }

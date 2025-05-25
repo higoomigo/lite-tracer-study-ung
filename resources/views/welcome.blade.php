@@ -123,7 +123,7 @@
                                 </section>
 
                                 <!-- Testimonials Section -->
-                                <section id="testimonials" class="py-20 bg-gray-50">
+                                {{-- <section id="testimonials" class="py-20 bg-gray-50">
                                     <div class="container mx-auto px-6">
                                         <h2 class="text-3xl md:text-4xl font-bold text-center text-navy mb-16 scroll-reveal active">Testimonial Lulusan</h2>
                                         
@@ -298,14 +298,14 @@ portofolio yang sangat berharga saat melamar pekerjaan.</p>
                 </button>
             </div>
             
-            <div class="mt-12 text-center">
+            {{-- <div class="mt-12 text-center">
                 <a href="#" class="btn-navy px-8 py-3 rounded-full font-semibold text-lg shadow-lg inline-block">Daftar Sekarang</a>
-            </div>
-        </div>
-    </section>
+            </div> --}}
+        {{-- </div> --}}
+    {{-- </section> --}}
 
     <!-- CTA Section -->
-    <section class="py-20 navy text-white">
+    {{-- <section class="py-20 navy text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 scroll-reveal active">Siap Menjadi Bagian dari Keluarga UNG?</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto scroll-reveal active">Bergabunglah dengan ribuan alumni sukses kami dan mulai perjalanan karir cemerlang Anda bersama Universitas Negeri Gorontalo.</p>
@@ -314,7 +314,7 @@ portofolio yang sangat berharga saat melamar pekerjaan.</p>
                 <a href="#contact" class="border-2 border-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-white hover:text-navy transition transform hover:-translate-y-1">Hubungi Kami</a>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-50">

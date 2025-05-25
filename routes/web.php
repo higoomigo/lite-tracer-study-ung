@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/admin/students', [ManageStudentController::class, 'index'])->name('admin.student');
+    Route::get('/admin/students/{id}', [ManageStudentController::class, 'show'])->name('admin.student.show');
 
 });
 
