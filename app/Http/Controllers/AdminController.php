@@ -12,7 +12,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-
         // Example query to get data for each chart
         // Status pekerjaan alumni
         $users = User::where('role', 'mahasiswa')->get();
@@ -124,10 +123,14 @@ class AdminController extends Controller
             'wirausahaCount',
             'lanjutStudiCount'
         ));
-
     }
-    // public function form()
-    // {
-    //     return view('admin.forms');
-    // }
+
+
+    public function viewForm()
+    {
+        $pekerjaan = Pekerjaan::all();
+        $lanjutStudi = LanjutStudi::all();
+        $wirausaha = Wirausaha::all();
+        return view('admin.forms', compact('pekerjaan', 'lanjutStudi', 'wirausaha'));
+    }
 }

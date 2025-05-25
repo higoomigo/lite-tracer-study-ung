@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title-dash')</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" src="https://cdn.datatables.net/2.3.1/css/dataTables.dataTables.min.css"></link>
+    <script src="https:////cdn.datatables.net/2.3.1/js/dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.1.0/dist/umd/simple-datatables.min.js"></script>
+    <link href=" https://cdn.jsdelivr.net/npm/simple-datatables@9.1.0/dist/style.min.css " rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/scrollreveal"></script>
     <script>

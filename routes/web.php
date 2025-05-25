@@ -37,7 +37,8 @@ Route::middleware('auth')->group(function () {
 
     
     Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
-    Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    // Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+    Route::get('/admin/forms', [AdminController::class, 'viewForm'])->name('admin.form');
     // Route::get('/')
 
 });
