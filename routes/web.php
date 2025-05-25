@@ -40,8 +40,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     // Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     Route::get('/admin/forms', [AdminController::class, 'viewForm'])->name('admin.form');
-    // Route::get('/')
-
+    Route::get('/admin/forms/pekerjaan/{id}', [AdminController::class, 'viewFormPekerjaan'])->name('admin.form.pekerjaan');
+    Route::get('/admin/forms/lanjut-studi/{id}', [AdminController::class, 'viewFormLanjutStudi'])->name('admin.form.lanjut-studi');
+    Route::get('/admin/forms/wirausaha/{id}', [AdminController::class, 'viewFormWirausahha'])->name('admin.form.wirausaha');
+    
 
     Route::get('/admin/students', [ManageStudentController::class, 'index'])->name('admin.student');
     Route::get('/admin/students/{id}', [ManageStudentController::class, 'show'])->name('admin.student.show');

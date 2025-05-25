@@ -141,4 +141,22 @@ class AdminController extends Controller
         $wirausaha = Wirausaha::all();
         return view('admin.forms', compact('pekerjaan', 'lanjutStudi', 'wirausaha'));
     }
+
+    public function viewFormPekerjaan($id){
+        $pekerjaan = Pekerjaan::with('user')->findOrFail($id);
+        return view('admin.reports.formPekerjaan', compact('pekerjaan'));
+    }
+
+    public function viewFormLanjutStudi($id){
+        $lanjutStudi = LanjutStudi::with('user')->findOrFail($id);
+        return view('admin.reports.formLanjutStudi', compact('lanjutStudi'));
+    }
+
+
+    public function viewFormWirausahha($id){
+        $wirausaha = Wirausaha::with('user')->findOrFail($id);
+        return view('admin.reports.formWirausaha', compact('wirausaha'));
+    }
+
+
 }
