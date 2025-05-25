@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WirausahaController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\LanjutStudiController;
+use App\Http\Controllers\ManageStudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
@@ -40,6 +41,9 @@ Route::middleware('auth')->group(function () {
     // Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
     Route::get('/admin/forms', [AdminController::class, 'viewForm'])->name('admin.form');
     // Route::get('/')
+
+
+    Route::get('/admin/students', [ManageStudentController::class, 'index'])->name('admin.student');
 
 });
 
